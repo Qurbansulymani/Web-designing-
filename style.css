@@ -313,7 +313,9 @@ span:hover {
   height: 100px;
   width: 100%;
   position: absolute;
+  align-items: center;
   margin-top: 310px;
+
   background-color: black;
 }
 .footer {
@@ -325,7 +327,7 @@ span:hover {
   font-size: 18px;
   padding: 10px 25px;
   text-align: center;
-  margin-left: 600px;
+  margin-left: 570px;
   margin-bottom: 10px;
   border: 2px solid blue;
   color: white;
@@ -340,4 +342,21 @@ span:hover {
   border-radius: 4px;
   text-decoration: solid;
   box-shadow: 1px 1px 6px rgb(53, 52, 52);
+}
+
+/* ============================================================
+   SOCIAL MEDIA IMAGE LINKS IN FOOTER
+   ============================================================ */
+.Foot a {
+  display: inline-block;
+  text-decoration: none;
+}
+.Foot a img {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.Foot a img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.35);
 }
