@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,10 +15,11 @@
         <a href="#" style="--i: 3" class="Contact">Contact me</a>
       </nav>
       <div class="Social-mida">
-        <a href="#" style="--g: 1">facboke</a>
-        <a href="#" style="--g: 2">watsapp</a>
-        <a href="#" style="--g: 3">Telegram</a>
-        <a href="#" style="--g: 4">linkdin</a>
+        <a href="#" style="--g: 1" class="social-fb">facboke</a>
+        <a href="#" style="--g: 2" class="social-wa">watsapp</a>
+
+        <a href="#" style="--g: 4" class="social-li">linkdin</a>
+        <a href="#" style="--g: 5" class="social-gh">gethub</a>
       </div>
     </header>
     <section class="section">
@@ -92,13 +93,14 @@
     <div class="Foot" style="position: absolute">
       <a href="#" class="footer">Contact Me</a>
       <img
+        id="fbIcon"
         src="facebook.jpg"
         alt="facboke logo"
         style="
           position: relative;
           align-items: center;
           width: 35px;
-          left: 570px;
+          left: 490px;
           height: 40px;
           border-radius: 10px;
           text-align: center;
@@ -107,27 +109,13 @@
           margin-top: 40px;
         "
       />
+
       <img
-        src="telegram.jpg"
-        alt="telegram logo"
-        style="
-          left: 588px;
-          position: relative;
-          align-items: center;
-          width: 35px;
-          height: 40px;
-          border-radius: 10px;
-          text-align: center;
-          cursor: pointer;
-          margin: 0 10px;
-          margin-top: 40px;
-        "
-      />
-      <img
+        id="waIcon"
         src="watsapp.jpg"
         alt="watsapp logo"
         style="
-          left: 600px;
+          left: 506px;
           position: relative;
           align-items: center;
           width: 40px;
@@ -139,6 +127,86 @@
           margin-top: 40px;
         "
       />
+      <img
+        id="liIcon"
+        src="linkedin.jpg"
+        alt="linkedin logo"
+        style="
+          left: 520px;
+          position: relative;
+          align-items: center;
+          width: 35px;
+          height: 40px;
+          border-radius: 10px;
+          text-align: center;
+          cursor: pointer;
+          margin: 0 10px;
+          margin-top: 40px;
+        "
+      />
+      <img
+        id="ghIcon"
+        src="gethub.png"
+        alt="gethub logo"
+        style="
+          left: 540px;
+          position: relative;
+          align-items: center;
+          width: 35px;
+          height: 40px;
+          border-radius: 10px;
+          text-align: center;
+          cursor: pointer;
+          margin: 0 10px;
+          margin-top: 40px;
+        "
+      />
     </div>
+
+    <script>
+      /* ============================================================
+         SOCIAL MEDIA LINKS — CHANGE THESE TO YOUR REAL PROFILES
+         ============================================================ */
+      const socialLinks = {
+        fbIcon:
+          "https://www.facebook.com/profile.php?id=61576329882251&mibextid=wwXIfr&mibextid=wwXIfr",
+
+        waIcon: "https://wa.me/93779482169",
+        liIcon: "https://linkedin.com/in/qurban-sulaimani-523964424",
+        ghIcon: "https://github.com/qurbansulymani",
+      };
+
+      /* Wrap each footer image in a clickable <a> tag */
+      Object.keys(socialLinks).forEach(function (id) {
+        const img = document.getElementById(id);
+        if (!img) return;
+
+        const link = document.createElement("a");
+        link.href = socialLinks[id];
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+
+        img.parentNode.insertBefore(link, img);
+        link.appendChild(img);
+      });
+
+      /* Also wire up the header text links */
+      const headerLinks = {
+        "social-fb":
+          "https://www.facebook.com/profile.php?id=61576329882251&mibextid=wwXIfr&mibextid=wwXIfr",
+        "social-wa": "https://wa.me/93779482169",
+
+        "social-li": "https://linkedin.com/in/qurban-sulaimani-523964424",
+        "social-gh": "https://github.com/qurbansulymani",
+      };
+
+      Object.keys(headerLinks).forEach(function (cls) {
+        const el = document.querySelector("." + cls);
+        if (!el) return;
+        el.href = headerLinks[cls];
+        el.target = "_blank";
+        el.rel = "noopener noreferrer";
+      });
+    </script>
   </body>
 </html>
