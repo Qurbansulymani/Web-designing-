@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>personal web</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="logo.jpg" alt="logo" width="40px" height="40px" />
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="navbar" id="navMenu">
+        <a href="#" style="--i: 1" class="home">Home</a>
+        <a href="#" style="--i: 2" class="About">About</a>
+        <a href="#" style="--i: 3" class="Contact">Contact me</a>
+      </nav>
+      <div class="Social-mida" id="socialMenu">
+        <a href="#" style="--g: 1" class="social-fb">facboke</a>
+        <a href="#" style="--g: 2" class="social-wa">watsapp</a>
+
+        <a href="#" style="--g: 4" class="social-li">linkdin</a>
+        <a href="#" style="--g: 5" class="social-gh">gethub</a>
+      </div>
+    </header>
+    <section class="section">
+      <div class="home">
+        <h1>Qurban Sulimani</h1>
+        <h2>A devoloper of the <span>front-end</span> engineer</h2>
+        <h4>
+          I am an engineer in on the populer of Afghanisatne private compay by
+          name of <span>Afganistan future</span>
+        </h4>
+        <a href="#" class="button">More info</a>
+      </div>
+      <div class="contain-image">
+        <div class="image">
+          <img src="contian.JPG" alt="contain image" />
+        </div>
+        <div class="contain-image2"></div>
+      </div>
+    </section>
+    <section class="main">
+      <a href="#" class="skill"> Skills </a>
+      <div>
+        <div class="goal">
+          <h3 class="qurbansulymani">Qurban Sulaimani</h3>
+          <h5 class="information">
+            I amd an engineer of the front-end web devolopment that work by
+            <span>css</span>, <span>html</span> ,<span>javascrip</span> and
+            <span>react</span>.
+          </h5>
+          <div class="main-image">
+            <img
+              class="html"
+              src="html.jpg"
+              alt="html logo"
+              style="width: 300px; height: 259px"
+            />
+            <img
+              class="css"
+              src="css.jpg"
+              alt="css logo"
+              style="width: 300px; height: 259px"
+            />
+            <img
+              class="javascrip"
+              src="javscrip.jpg"
+              alt="javascrip logo"
+              style="width: 300px; height: 259px"
+            />
+          </div>
+          <div class="cisco">
+            <h5 class="information going">
+              I have the <span>cisco CCNA</span> <br />certifecet deploma from
+              the azombyt education center. <br />
+              As we know today the cisco cirtefecit is very important for <br />
+              all engineer for Network engineering, according <br />to neccary
+              to network. <br />
+              I ahave plans to take multiple certifect from <br />
+              the differance parts of cisco like <span>CCNA</span>,
+              <span>CCNP</span>, <span>CCID</span> and ...
+            </h5>
+            <img
+              class="CCNA"
+              src="cisco CCNA certifecit.jpg"
+              alt="cisco CCNA logo"
+              style="width: 300px; height: 250px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="Foot">
+      <a href="#" class="footer">Contact Me</a>
+
+      <img id="fbIcon" src="facebook.jpg" alt="facebook logo" />
+      <img id="tgIcon" src="telegram.jpg" alt="telegram logo" />
+      <img id="waIcon" src="watsapp.jpg" alt="whatsapp logo" />
+      <img id="liIcon" src="linkedin.jpg" alt="linkedin logo" />
+      <img id="ghIcon" src="gethub.png" alt="github logo" />
+    </div>
+
+    <script>
+      /* ============================================================
+         SOCIAL MEDIA LINKS — CHANGE THESE TO YOUR REAL PROFILES
+         ============================================================ */
+      const socialLinks = {
+        fbIcon:
+          "https://www.facebook.com/profile.php?id=61576329882251&mibextid=wwXIfr&mibextid=wwXIfr",
+
+        waIcon: "https://wa.me/93779482169",
+        liIcon: "https://linkedin.com/in/qurban-sulaimani-523964424",
+        ghIcon: "https://github.com/qurbansulymani",
+      };
+      /* ---- Hamburger menu toggle ---- */
+      const menuToggle = document.getElementById("menuToggle");
+      const navMenu = document.getElementById("navMenu");
+      const socialMenu = document.getElementById("socialMenu");
+
+      menuToggle.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
+        socialMenu.classList.toggle("active");
+      });
+      /* Wrap each footer image in a clickable <a> tag */
+      Object.keys(socialLinks).forEach(function (id) {
+        const img = document.getElementById(id);
+        if (!img) return;
+
+        const link = document.createElement("a");
+        link.href = socialLinks[id];
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+
+        img.parentNode.insertBefore(link, img);
+        link.appendChild(img);
+      });
+
+      /* Also wire up the header text links */
+      const headerLinks = {
+        "social-fb":
+          "https://www.facebook.com/profile.php?id=61576329882251&mibextid=wwXIfr&mibextid=wwXIfr",
+        "social-wa": "https://wa.me/93779482169",
+
+        "social-li": "https://linkedin.com/in/qurban-sulaimani-523964424",
+        "social-gh": "https://github.com/qurbansulymani",
+      };
+
+      Object.keys(headerLinks).forEach(function (cls) {
+        const el = document.querySelector("." + cls);
+        if (!el) return;
+        el.href = headerLinks[cls];
+        el.target = "_blank";
+        el.rel = "noopener noreferrer";
+      });
+    </script>
+  </body>
+</html>
